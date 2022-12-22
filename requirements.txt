@@ -1,0 +1,17 @@
+numpy
+pandas
+scipy
+matplotlib
+streamlit
+pandas-profiling
+streamlit-pandas-profiling
+openpyxl
+xlrd
+sklearn
+dmba
+selenium
+bs4
+traceback
+time
+os
+webdriver-manager
