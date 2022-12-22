@@ -14,10 +14,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @st.experimental_singleton
 def get_driver():
-    options = Options()
-    options.add_argument('--disable-gpu')
-    options.add_argument('--headless')
     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+options = Options()
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
 
 driver = get_driver()
 driver.get("https://www.lybrate.com/")
