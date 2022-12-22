@@ -1,11 +1,7 @@
 pip
 numpy
 pandas
-matplotlib
 streamlit
-xlrd
-sklearn
-dmba
 selenium
 seleniumbase
 beautifulsoup4
@@ -13,4 +9,3 @@ traceback2
 python-time
 webdriver-manager
 ipywidgets
-Footer
