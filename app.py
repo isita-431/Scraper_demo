@@ -12,15 +12,30 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+# @st.experimental_singleton
+# def Driver():
+#     @st.experimental_singleton
+#     def get_driver():
+#         return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+#     options = Options()
+#     options.add_argument('--disable-gpu')
+#     options.add_argument('--headless')
+#     driver = get_driver()
+#     return driver
 @st.experimental_singleton
 def Driver():
-#     @st.experimental_singleton
-    def get_driver():
-        return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    options = Options()
-    options.add_argument('--disable-gpu')
-    options.add_argument('--headless')
-    driver = get_driver()
+    chrome_options = webdriver.ChromeOptions()
+#     output_path = os.path.join(os.getcwd(),'output')
+#     download_excel_prefs = {"download.default_directory" : output_path}
+#     chrome_options.add_experimental_option("prefs",download_excel_prefs)   
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument("--enable-popup-blocking")
+    chrome_options.add_argument('--disable-notifications')
+#     chrome_path = ChromeDriverManager().install()
+    driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
+    time.sleep(3)
     return driver
 
 driver = Driver()
