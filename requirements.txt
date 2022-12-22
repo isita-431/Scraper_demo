@@ -7,5 +7,5 @@ selenium
 seleniumbase
 beautifulsoup4
 traceback2
-time
+python-time
 webdriver-manager
