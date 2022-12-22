@@ -1,11 +1,3 @@
-pip
-numpy
-pandas
 streamlit
-selenium
 seleniumbase
-beautifulsoup4
-traceback2
-python-time
 webdriver-manager
-ipywidgets
