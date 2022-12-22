@@ -20,7 +20,7 @@ def get_driver():
     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 driver = get_driver()
-driver.get(https://www.lybrate.com/)
+driver.get("https://www.lybrate.com/")
 st.code(driver.page_source)
     
 
