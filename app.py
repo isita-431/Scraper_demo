@@ -35,7 +35,7 @@ def Driver():
     chrome_options.add_argument('--disable-notifications')
 #     chrome_path = ChromeDriverManager().install()
     driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
-    time.sleep(3)
+#     time.sleep(3)
     return driver
 
 driver = Driver()
