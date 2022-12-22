@@ -1,16 +1,11 @@
 numpy
 pandas
-scipy
 matplotlib
 streamlit
-openpyxl
 xlrd
-sklearn
-dmba
 selenium
 seleniumbase
 beautifulsoup4
-traceback
+traceback2
 time
-os
 webdriver-manager
