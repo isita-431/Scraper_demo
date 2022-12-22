@@ -12,35 +12,40 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-# @st.experimental_singleton
-# def Driver():
-#     @st.experimental_singleton
-#     def get_driver():
-#         return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-#     options = Options()
-#     options.add_argument('--disable-gpu')
-#     options.add_argument('--headless')
-#     driver = get_driver()
-#     return driver
 @st.experimental_singleton
 def Driver():
-    chrome_options = Options()
+    @st.experimental_singleton
+    def get_driver():
+        return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+options = Options()
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
+driver = get_driver()
+f=1
+if f:
+    f.get("https://www.lybrate.com/")
+    st.code(driver.page_source)
+   
+#     return driver
+# @st.experimental_singleton
+# def Driver():
+#     chrome_options = Options()
 #     output_path = os.path.join(os.getcwd(),'output')
 #     download_excel_prefs = {"download.default_directory" : output_path}
 #     chrome_options.add_experimental_option("prefs",download_excel_prefs)   
 #     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 #     chrome_options.add_experimental_option("detach", True)
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument("--enable-popup-blocking")
-    chrome_options.add_argument('--disable-notifications')
+#     chrome_options.add_argument('--headless')
+#     chrome_options.add_argument("--enable-popup-blocking")
+#     chrome_options.add_argument('--disable-notifications')
 #     chrome_path = ChromeDriverManager().install()
-    driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
+#     driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
 #     time.sleep(3)
-    return driver
+#     return driver
 
-driver = Driver()
-driver.get("https://www.lybrate.com/")
-st.code(driver.page_source)
+# driver = Driver()
+# driver.get("https://www.lybrate.com/")
+# st.code(driver.page_source)
 # from selenium import webdriver
 # from selenium.common.exceptions import TimeoutException
 # from selenium.webdriver.common.by import By
