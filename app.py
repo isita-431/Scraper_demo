@@ -21,7 +21,7 @@ options.add_argument('--headless')
 driver = get_driver()
 f=1
 if f:
-    f.get("https://www.lybrate.com/")
+    driver.get("https://www.lybrate.com/")
     st.code(driver.page_source)
    
 #     return driver
